@@ -1,7 +1,13 @@
 import "./App.css";
 
 function App() {
-  return <div>Hello World!</div>;
+  return (
+    <div className="text-center">
+      <h1 className="text-3xl font-bold underline text-blue-500">
+        Hello Tailwind CSS!
+      </h1>
+    </div>
+  );
 }
 
 export default App;
