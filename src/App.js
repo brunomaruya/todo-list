@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <div className="text-center">
-      <h1 className="text-3xl font-bold underline text-blue-500">
+      <h1 className="text-3xl font-bold underline text-darkPurple">
         Hello Tailwind CSS!
       </h1>
     </div>
