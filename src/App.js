@@ -1,11 +1,10 @@
+import { PlusIcon } from "@heroicons/react/16/solid";
 import "./App.css";
 
 function App() {
   return (
-    <div className="text-center">
-      <h1 className="text-3xl font-bold underline text-darkPurple">
-        Hello Tailwind CSS!
-      </h1>
+    <div className=" w-screen h-screen bg-bg text-white">
+      <PlusIcon className="h-5 w-5" />
     </div>
   );
 }
