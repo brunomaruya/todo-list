@@ -4,5 +4,6 @@ export const colors = {
   green: "#78CFB0",
   bg: "#0D0714",
   itemBg: "#15101C",
+  containerBg: "#1D1825",
   text: "#fff",
 };

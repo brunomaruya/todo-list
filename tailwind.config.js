@@ -11,6 +11,7 @@ module.exports = {
         green: colors.green,
         bg: colors.bg,
         itemBg: colors.itemBg,
+        containerBg: colors.containerBg,
         text: colors.text,
       },
     },
