@@ -10,6 +10,7 @@ module.exports = {
         lightPurple: colors.lightPurple,
         green: colors.green,
         bg: colors.bg,
+        itemBg: colors.itemBg,
         text: colors.text,
       },
     },
