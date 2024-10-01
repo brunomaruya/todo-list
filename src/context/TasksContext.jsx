@@ -6,6 +6,10 @@ const TasksContext = createContext();
 export default function TasksContextProvider({ children }) {
   const [tasks, setTasks] = useLocalStorage("tasks", []);
 
+  const addTask = (task) => {
+    setTasks([...tasks, { label: task, done: false }]);
+  };
+
   return <TasksContext.Provider value={{}}>{children}</TasksContext.Provider>;
 }
 
