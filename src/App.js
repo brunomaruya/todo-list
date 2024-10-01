@@ -1,4 +1,5 @@
 import "./App.css";
+import CompletedTasks from "./components/CompletedTasks";
 import Input from "./components/Input";
 import PendingTasks from "./components/PendingTasks";
 
@@ -8,6 +9,7 @@ function App() {
       <div className="container w-5/12 h-5/6 p-16 bg-containerBg  rounded-lg shadow-2xl ">
         <Input />
         <PendingTasks />
+        <CompletedTasks />
       </div>
     </div>
   );
