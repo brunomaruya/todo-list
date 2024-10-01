@@ -10,7 +10,11 @@ export default function TasksContextProvider({ children }) {
     setTasks([...tasks, { label: task, done: false }]);
   };
 
-  return <TasksContext.Provider value={{}}>{children}</TasksContext.Provider>;
+  return (
+    <TasksContext.Provider value={{ addTask, tasks }}>
+      {children}
+    </TasksContext.Provider>
+  );
 }
 
 export const useTasks = () => {
