@@ -1,11 +1,10 @@
-import { PlusIcon } from "@heroicons/react/16/solid";
 import "./App.css";
 import Input from "./components/Input";
 
 function App() {
   return (
-    <div className="flex justify-center w-screen h-screen bg-bg text-text">
-      <div className="container w-4/12 mt-28  ">
+    <div className="flex justify-center items-center w-screen h-screen bg-bg  text-text">
+      <div className="container w-5/12 h-5/6 p-16 bg-containerBg  rounded-lg shadow-2xl ">
         <Input />
       </div>
     </div>
