@@ -4,7 +4,8 @@ import { useTasks } from "../context/TasksContext";
 
 export default function Input() {
   const [newTask, setNewTask] = useState("");
-  const { addTask } = useTasks();
+  const [taskExists, setTaskExists] = useState(false);
+  const { addTask, tasks } = useTasks();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,21 +14,36 @@ export default function Input() {
       setNewTask("");
     }
   };
+
+  const checkIfExists = (e) => {
+    return tasks.some((task) => task.label === e.target.value);
+  };
+
+  const handleInputChange = (e) => {
+    setNewTask(e.target.value);
+    setTaskExists(checkIfExists(e));
+    console.log(taskExists);
+  };
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-4">
-      <input
-        value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
-        type="text"
-        placeholder="Add a new task"
-        className="w-full p-2 bg-transparent outline-darkPurple outline-1 outline rounded-lg "
-      />
-      <button
-        type="submit"
-        className="p-2 bg-lightPurple aspect-square rounded-lg hover:bg-darkPurple"
-      >
-        <PlusIcon className="w-6 " />
-      </button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit} className="flex items-center gap-4">
+        <input
+          value={newTask}
+          onChange={(e) => handleInputChange(e)}
+          type="text"
+          placeholder="Add a new task"
+          className="w-full p-2 bg-transparent outline-darkPurple outline-1 outline rounded-lg "
+        />
+        <button
+          type="submit"
+          className="p-2 bg-lightPurple aspect-square rounded-lg hover:bg-darkPurple"
+        >
+          <PlusIcon className="w-6 " />
+        </button>
+      </form>
+      <div className="text-red-500">
+        {taskExists ? "Task already exists" : ""}
+      </div>
+    </>
   );
 }
