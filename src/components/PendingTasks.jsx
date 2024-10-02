@@ -13,7 +13,7 @@ export default function PendingTasks() {
         {tasks
           .filter((task) => !task.done)
           .map((task, id) => (
-            <Task key={id} label={task.label} />
+            <Task key={id} label={task.label} done={task.done} />
           ))}
       </div>
     </div>
