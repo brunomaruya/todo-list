@@ -6,7 +6,9 @@ export default function PendingTasks() {
   const { tasks } = useTasks();
   return (
     <div className=" mt-16 ">
-      <h1 className="mb-4">Tasks to do - {"number"}</h1>
+      <h1 className="mb-4">
+        Tasks to do - {tasks.filter((task) => !task.done).length}
+      </h1>
       <div className="flex flex-col gap-2">
         {tasks
           .filter((task) => !task.done)
