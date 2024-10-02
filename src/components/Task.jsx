@@ -3,7 +3,7 @@ import React from "react";
 import { useTasks } from "../context/TasksContext";
 
 export default function Task({ label, done = false }) {
-  const { toggleTaskStatus } = useTasks();
+  const { toggleTaskStatus, deleteTask } = useTasks();
   return (
     <div
       className={`flex justify-between items-center bg-itemBg p-5 rounded-lg ${
@@ -18,7 +18,10 @@ export default function Task({ label, done = false }) {
           className="h-5 w-5 cursor-pointer"
           onClick={() => toggleTaskStatus(label)}
         />
-        <TrashIcon className="h-5 w-5 cursor-pointer" />
+        <TrashIcon
+          className="h-5 w-5 cursor-pointer"
+          onClick={() => deleteTask(label)}
+        />
       </span>
     </div>
   );

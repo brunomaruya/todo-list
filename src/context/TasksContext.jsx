@@ -19,8 +19,15 @@ export default function TasksContextProvider({ children }) {
     setTasks(newTasks);
   };
 
+  const deleteTask = (label) => {
+    const newTasks = tasks.filter((task) => task.label !== label);
+    setTasks(newTasks);
+  };
+
   return (
-    <TasksContext.Provider value={{ addTask, tasks, toggleTaskStatus }}>
+    <TasksContext.Provider
+      value={{ addTask, tasks, toggleTaskStatus, deleteTask }}
+    >
       {children}
     </TasksContext.Provider>
   );
