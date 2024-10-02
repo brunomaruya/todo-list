@@ -10,7 +10,9 @@ export default function Task({ label, done = false }) {
         done ? "text-green  line-through" : "text-lightPurple"
       } `}
     >
-      <span className="cursor-pointer">{label}</span>
+      <span className="cursor-pointer" onClick={() => toggleTaskStatus(label)}>
+        {label}
+      </span>
       <span className={`flex gap-4 items-center `}>
         <CheckIcon
           className="h-5 w-5 cursor-pointer"
