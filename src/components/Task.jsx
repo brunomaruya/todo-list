@@ -11,7 +11,7 @@ export default function Task({ label, done = false }) {
       } `}
     >
       <span className="cursor-pointer">{label}</span>
-      <span className={`gap-4 items-center ${done ? "hidden" : "flex"}`}>
+      <span className={`flex gap-4 items-center `}>
         <CheckIcon
           className="h-5 w-5 cursor-pointer"
           onClick={() => toggleTaskStatus(label)}
