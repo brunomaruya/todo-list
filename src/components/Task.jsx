@@ -1,6 +1,8 @@
 import { CheckIcon, TrashIcon } from "@heroicons/react/16/solid";
 import React, { useState } from "react";
 import { useTasks } from "../context/TasksContext";
+import Checkbox from "@mui/material/Checkbox";
+import { colors } from "../styles/colors";
 
 export default function Task({ label, done = false }) {
   const { toggleTaskStatus, deleteTask } = useTasks();
@@ -18,11 +20,16 @@ export default function Task({ label, done = false }) {
         {label}
       </span>
       <span className={`flex gap-4 items-center `}>
-        <input
-          type="checkbox"
+        <Checkbox
           checked={isChecked}
-          className="h-5 w-5 cursor-pointer  text-green focus:ring-green border-gray-300 rounded"
+          className="h-5 w-5 cursor-pointer   "
           onChange={(e) => handleCheckBoxChange(e)}
+          sx={{
+            color: colors.lightPurple, // Cor da borda quando desmarcado
+            "&.Mui-checked": {
+              color: colors.green, // Cor quando marcado
+            },
+          }}
         />
         <TrashIcon
           className="h-5 w-5 cursor-pointer"
