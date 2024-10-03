@@ -16,13 +16,12 @@ export default function Input() {
   };
 
   const checkIfExists = (e) => {
-    return tasks.some((task) => task.label === e.target.value);
+    return tasks.some((task) => task.label === e.target.value.trim());
   };
 
   const handleInputChange = (e) => {
     setNewTask(e.target.value);
     setTaskExists(checkIfExists(e));
-    console.log(taskExists);
   };
   return (
     <>
