@@ -9,7 +9,7 @@ export default function Input() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (newTask.trim()) {
+    if (newTask.trim() && !taskExists) {
       addTask(newTask);
       setNewTask("");
     }
